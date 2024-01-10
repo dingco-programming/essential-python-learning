@@ -5,7 +5,7 @@ class VendingMachine:
         self.products = products
         self.balance = 0
 
-    def input_menu(self):
+    def display_menu(self):
         print(f"자판기 프로그램 {emoji.emojize(':grinning_face_with_big_eyes:')}")
         print("-----------------------")
         for idx in range(len(self.products)):
@@ -20,8 +20,6 @@ class VendingMachine:
         print("3. 잔액 반환")
         print("4. 종료")
         print("")
-        menu = int(input("메뉴 선택 : "))
-        return menu
     
     def insert_money(self):
         money = int(input("투입 금액 입력 (원): "))

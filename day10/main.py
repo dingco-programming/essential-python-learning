@@ -8,7 +8,11 @@ vm = VendingMachine([
 ])
 
 while True:
-    menu = vm.input_menu()
+    vm.display_menu()
+    try:
+        menu = int(input("메뉴 선택 : "))
+    except:
+        print(f">> 잘못된 메뉴가 입력되었습니다.")
     if menu == 1:
         vm.select_product()
     elif menu == 2:
@@ -19,5 +23,5 @@ while True:
         print("프로그램 종료")
         break
     else:
-        print(f"잘못된 메뉴 : {menu}")
+        print(f">> 잘못된 메뉴가 입력되었습니다.")
     time.sleep(2)
