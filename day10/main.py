@@ -7,7 +7,6 @@ vm = VendingMachine([
     {"name": "환타", "price": 1500, "count": 5}
 ])
 
-
 while True:
     menu = vm.input_menu()
     if menu == 1:

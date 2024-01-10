@@ -6,7 +6,6 @@ class VendingMachine:
         self.balance = 0
 
     def input_menu(self):
-        print("\n\n\n\n\n")
         print(f"자판기 프로그램 {emoji.emojize(':grinning_face_with_big_eyes:')}")
         print("-----------------------")
         for idx in range(len(self.products)):
