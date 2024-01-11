@@ -4,7 +4,7 @@ class VendingMachine:
         self.balance = 0
 
     def display_menu(self):
-        print(f"자판기 프로그램")
+        print(f"\n\n자판기 프로그램")
         print("-----------------------")
         for idx in range(len(self.products)):
             product = self.products[idx]
@@ -36,7 +36,7 @@ class VendingMachine:
             self.balance = self.balance - product["price"]
             product["count"] = product["count"] - 1
         else:
-            print(f">> 구입할 수 없습니다.")
+            print(f">> 상품을 구입할 수 없습니다.")
 
 
 vm = VendingMachine([
