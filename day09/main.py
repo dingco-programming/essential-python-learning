@@ -8,7 +8,7 @@ class VendingMachine:
         print("-----------------------")
         for idx in range(len(self.products)):
             product = self.products[idx]
-            print(f"{idx + 1}. {product['name']}({product['count']}개) : {product['price']}원")
+            print(f"{idx + 1}. {product['name']}({product['count']}개) : {product['price']} 원")
         print("-----------------------")
         print(f"현재 잔액 : {self.balance} 원")
         print("-----------------------")
@@ -18,15 +18,6 @@ class VendingMachine:
         print("3. 잔액 반환")
         print("4. 종료")
         print("")
-    
-    def insert_money(self):
-        money = int(input("투입 금액 입력 (원): "))
-        self.balance = self.balance + money
-        print(f">> {money}원이 투입되었습니다.")
-
-    def return_balance(self):
-        print(f">> {self.balance}원을 반환합니다.")
-        self.balance = 0
 
     def select_product(self):
         num = int(input("상품 번호 입력 : "))
@@ -37,6 +28,15 @@ class VendingMachine:
             product["count"] = product["count"] - 1
         else:
             print(f">> 상품을 구입할 수 없습니다.")
+    
+    def insert_money(self):
+        money = int(input("투입 금액 입력 (원): "))
+        self.balance = self.balance + money
+        print(f">> {money}원이 투입되었습니다.")
+
+    def return_balance(self):
+        print(f">> {self.balance}원을 반환합니다.")
+        self.balance = 0
 
 
 vm = VendingMachine([
@@ -50,7 +50,7 @@ while True:
     try:
         menu = int(input("메뉴 선택 : "))
     except:
-        print(f">> 잘못된 메뉴가 입력되었습니다.")
+        print(f">> 숫자로 메뉴를 입력해주세요!")
     if menu == 1:
         vm.select_product()
     elif menu == 2:
@@ -61,4 +61,4 @@ while True:
         print("프로그램 종료")
         break
     else:
-        print(f">> 잘못된 메뉴가 입력되었습니다.")
+        print(f">> 1~4까지 숫자를 입력해주세요!")

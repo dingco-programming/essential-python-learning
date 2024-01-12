@@ -53,7 +53,7 @@ while True:
     try:
         menu = int(input("메뉴 선택 : "))
     except:
-        print(f">> 잘못된 메뉴가 입력되었습니다.")
+        print(f">> 숫자로 메뉴를 입력해주세요!")
     if menu == 1:
         balance = select_product(products, balance)
     elif menu == 2:
@@ -64,4 +64,4 @@ while True:
         print("프로그램 종료")
         break
     else:
-        print(f">> 잘못된 메뉴가 입력되었습니다.")
+        print(f">> 1~4까지 숫자를 입력해주세요!")
